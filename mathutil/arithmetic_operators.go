@@ -1,4 +1,4 @@
-package mathutils
+package mathutil
 
 // Add Returns the sum (+) of two numbers for testing tests.
 func Add(a float64, b float64) float64 {
