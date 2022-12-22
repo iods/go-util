@@ -1,4 +1,4 @@
-package mathutil
+package math
 
 // Average Calculates the average of several numbers.
 func Average(numbers ...float64) float64 {
