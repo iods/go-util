@@ -1,0 +1,3 @@
+package errorutil
+
+func

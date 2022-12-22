@@ -1,4 +1,4 @@
-package dateutil
+package datetime
 
 import "testing"
 
