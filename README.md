@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img src="https://github.com/iods/go-pherit/raw/develop/assets/gopher2.png" height="200" />
+    <img src="https://github.com/iods/go-pherit/raw/develop/assets/gopher.png" height="200" />
 </h1>
 
 Util - Common Utilities for Go
