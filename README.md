@@ -5,11 +5,11 @@
 Util - Common Utilities for Go
 ==============================
 
-The `go-util` package is a bundle of utilities and shared code I am using for common things in Go. 
+The `go-util` package is a set of composable utilities, libraries, and shared code I am coding with
+for common things in Go. It is still a WIP.
 
-It is still a WIP.
-
-These are wrappers and base containers for making common tasks faster and less repetitive.
+These are wrappers and base containers for making common tasks faster and less repetitive for building
+CLIs to enterprise. They are packaged individually for tooling.
 
 > **WARNING:** This is a private package and is not currently maintained for public use.
 
@@ -48,7 +48,7 @@ These are wrappers and base containers for making common tasks faster and less r
    * http
      * httputil 
      * clientutil
-   * tokenizer
+   * tokenutil
    * jwtutil
    * corsutil
    * urlutil
