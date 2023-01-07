@@ -1,4 +1,4 @@
-package errorutil
+package error
 
 import (
 	"gopkg.in/errgo.v1"

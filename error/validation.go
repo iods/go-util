@@ -1,1 +1,1 @@
-package errorutil
+package error

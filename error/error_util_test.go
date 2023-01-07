@@ -1,4 +1,4 @@
-package errorutil
+package error
 
 func causeOfError(err error) error {
 	type causer interface {
