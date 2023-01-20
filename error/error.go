@@ -1,5 +1,16 @@
 package error
 
+// conventionally an error is something that is fatal to a program - go does not provide this
+// in Go, an error is just a value that a function can return if something unexpected happens
+
+/*
+ Scenario: Something happens unexpected in a function.
+ Example:  Function is invoked with the wrong arguments.
+           Execution within the function did not go as planned.
+ Response: Error is returned as a value if either happen.
+
+*/
+
 /*
  Errors in Go are not exceptions - coming from PHP
  Errors in Go are values - not like try and catch
