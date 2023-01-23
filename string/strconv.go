@@ -147,13 +147,13 @@ func ByteToString(b []byte) string {
 	return *(*string)(unsafe.Pointer(&b))
 }
 
-// ByteToStr converts bytes to a string, an alias of ByteToString()
-func ByteToStr(b []byte) string {
+// ByteTo converts bytes to a string, an alias of ByteToString()
+func ByteTo(b []byte) string {
 	return *(*string)(unsafe.Pointer(&b))
 }
 
-// StrToBytes converts a string to bytes.
-func StrToBytes(s string) (b []byte) {
+// ToBytes converts a string to bytes.
+func ToBytes(s string) (b []byte) {
 	header := (*reflect.StringHeader)(unsafe.Pointer(&s))
 	sh := (*reflect.SliceHeader)(unsafe.Pointer(&b))
 
