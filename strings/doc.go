@@ -1,2 +1,2 @@
-// Package string handles everything Go does not for Strings.
+// Package strings handles everything Go does not for Strings.
 package strings
