@@ -1,7 +1,8 @@
 
-go-env:
-	@echo "GO111MODULE: `go env GO111MODULE`"
 
-.PHONY: go-env
+# include package specific Makefiles
+include ./debug/Makefile-debug.mk
+include ./error/Makefile-error.mk
+include ./string/Makefile-string.mk
 
-##@ Test Utilities
+
