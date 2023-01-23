@@ -16,12 +16,23 @@ type Float64ToString func(float64) string
 // Int64ToString declares a function type for integers to strings.
 type Int64ToString func(int64) string
 
+// stringHeader expands and declares an alias.
+type stringHeader struct {
+	data unsafe.Pointer
+	len  int
+}
+
+// sliceHeader expands the reflect.SliceHeader pointer.
+type sliceHeader struct {
+	data unsafe.Pointer
+	len  int
+	cap  int
+}
+
 var (
 	ErrorMessageInvalidLayout    = errors.New("invalid layout, try again")
 	ErrorMessageInvalidParameter = errors.New("invalid input param, try again")
-)
 
-var (
 	toSnake = regexp.MustCompile("[A-Z][a-z]")
 	toCamel = map[string]*regexp.Regexp{
 		" ": regexp.MustCompile(" +[a-zA-Z]"),
@@ -133,7 +144,6 @@ func FormatToString(v any, errorOut bool) (s string, err error) {
 			s = fmt.Sprint(value)
 		}
 	}
-
 	return
 }
 
@@ -147,19 +157,57 @@ func ByteToString(b []byte) string {
 	return *(*string)(unsafe.Pointer(&b))
 }
 
-// ByteTo converts bytes to a string, an alias of ByteToString()
-func ByteTo(b []byte) string {
+// ByteToStr converts bytes to a string, an alias of ByteToString()
+func ByteToStr(b []byte) string {
 	return *(*string)(unsafe.Pointer(&b))
 }
 
-// ToBytes converts a string to bytes.
-func ToBytes(s string) (b []byte) {
-	header := (*reflect.StringHeader)(unsafe.Pointer(&s))
-	sh := (*reflect.SliceHeader)(unsafe.Pointer(&b))
+// BtoS returns an alias of ByteToString()
+func BtoS(b []byte) string {
+	return *(*string)(unsafe.Pointer(&b))
+}
 
-	sh.Data = header.Data
-	sh.Len = header.Len
-	sh.Cap = header.Len
+// StringToBytes returns a string converted to bytes.
+func StringToBytes(s string) (bs []byte) {
+	sh := (*reflect.StringHeader)(unsafe.Pointer(&s))
+	bh := (*reflect.SliceHeader)(unsafe.Pointer(&bs))
+	bh.Data = sh.Data
+	bh.Len = sh.Len
+	bh.Cap = sh.Len
+	return
+}
 
-	return b
+// String2Bytes returns an alias of StringToBytes()
+func String2Bytes(s string) (b []byte) {
+	*(*string)(unsafe.Pointer(&b)) = s
+	*(*int)(unsafe.Pointer(uintptr(unsafe.Pointer(&b)) + 2*unsafe.Sizeof(&b))) = len(s)
+	return
+}
+
+// StrToBytes returns an alias of StringToBytes()
+func StrToBytes(s string) (b []byte) {
+	sh := (*stringHeader)(unsafe.Pointer(&s))
+
+	return *(*[]byte)(unsafe.Pointer(&sliceHeader{
+		data: sh.data,
+		len:  len(s),
+		cap:  len(s),
+	}))
+}
+
+// Str2Bytes returns an alias of StringToBytes()
+func Str2Bytes(s string) []byte {
+	x := (*[2]uintptr)(unsafe.Pointer(&s))
+	h := [3]uintptr{x[0], x[1], x[1]}
+	return *(*[]byte)(unsafe.Pointer(&h))
+}
+
+// StoB returns an alias of StringToBytes()
+func StoB(s string) []byte {
+	return *(*[]byte)(unsafe.Pointer(
+		&struct {
+			string
+			Cap int
+		}{s, len(s)},
+	))
 }
