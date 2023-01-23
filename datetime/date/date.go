@@ -1,4 +1,4 @@
-package timeutil
+package date
 
 import "errors"
 

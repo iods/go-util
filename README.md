@@ -13,6 +13,8 @@ CLIs to enterprise. They are packaged individually for tooling.
 
 > **WARNING:** This is a private package and is not currently maintained for public use.
 
+Packages that are postfixed with `util` end that way because their alias or the package they extend is a conflict.
+
  * archive
    * gziputil
    * tarutil

@@ -48,21 +48,58 @@ var bgcolors = map[Color]string{
 	CyanBg:    string([]byte{27, 91, 57, 55, 59, 52, 54, 109}),
 }
 
+// OutputGreen returns the provided string in a Green text color with no background color.
+func OutputGreen(msg string) string {
+	return format(Green, msg)
+}
+
+// OutputWhite returns the provided string in a White text color with no background color.
+func OutputWhite(msg string) string {
+	return format(White, msg)
+}
+
+// OutputYellow returns the provided string in a Yellow text color with no background color.
+func OutputYellow(msg string) string {
+	return format(Yellow, msg)
+}
+
+// OutputRed returns the provided string in a Red text color with no background color.
+func OutputRed(msg string) string {
+	return format(Red, msg)
+}
+
+// OutputBlue returns the provided string in a Blue text color with no background color.
+func OutputBlue(msg string) string {
+	return format(Blue, msg)
+}
+
+// OutputMagenta returns the provided string in a Magenta text color with no background color.
+func OutputMagenta(msg string) string {
+	return format(Magenta, msg)
+}
+
+// OutputCyan returns the provided string in a Cyan text color with no background color.
+func OutputCyan(msg string) string {
+	return format(Cyan, msg)
+}
+
+// color returns the matching color value or an empty string.
 func color(c Color) string {
-	if _, ok := colors[c]; ok {
-		return string(c)
+	if cs, ok := colors[c]; ok {
+		return cs
 	}
 	return ""
 }
 
+// bgcolor returns the matching bgcolors value or an empty string.
 func bgcolor(c Color) string {
-	if _, ok := bgcolors[c]; ok {
-		return string(c)
+	if cs, ok := bgcolors[c]; ok {
+		return cs
 	}
 	return ""
 }
 
 // format returns the output formatted with color (should this go in error formatting too?)
-func format(c Color, v string) string {
-	return fmt.Sprintf("%s%s%s", color(c), v, color(None))
+func format(c Color, msg string) string {
+	return fmt.Sprintf("%s%s%s", color(c), msg, color(Reset))
 }

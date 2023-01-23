@@ -1,2 +1,2 @@
-// Package timeutil are date & time protobuf serialization, comparison and other common tools wrapped in one package.
-package timeutil
+// Package datetime are date & time enhancements, serialization, comparison and other common tools wrapped in one package.
+package datetime

@@ -1,3 +1,3 @@
-package timeutil
+package date
 
 // civilian time

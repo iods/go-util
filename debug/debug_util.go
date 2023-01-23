@@ -6,6 +6,7 @@ import (
 	"time"
 )
 
+// do i need to add this to interfaces?
 const threshold = time.Second * 3
 
 // options for debugging utility at build

@@ -1,4 +1,4 @@
-package timeutil
+package date
 
 func ConvertDayToString(i uint16) string {
 	day := []string{

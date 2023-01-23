@@ -1,11 +1,21 @@
 package main
 
-import "github.com/iods/go-util/debug"
+import (
+	"fmt"
+)
 
 func init() {
-
+	fmt.Println("format here")
 }
 
 func main() {
-	debug.Write("this is a story")
+	fmt.Println("and another.")
+}
+
+func foo() errors {
+
+}
+
+func baz() error {
+	return
 }
