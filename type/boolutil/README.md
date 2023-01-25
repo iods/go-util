@@ -1,14 +1,16 @@
-Package `maputil` v0.1.0
+Package `boolutil` v0.1.0
 =======================
 
-Package `maputil` adds and extends default tool functions available for maps in Go.
+Package `boolutil` adds and extends default tool functions available for booleans in Go.
 
 > **WARNING:** This is a private package and is not currently maintained for public use.
 
 tl;dr
 -----
 
-Do some things.
+ * does some things.
+ * does some more things.
+ * does a couple more things.
 
 
 Getting Started
@@ -17,7 +19,7 @@ Getting Started
 ### Installation
 
 ```shell
-go get github.com/iods/go-util/data/maputil
+go get github.com/iods/go-util/type/boolutil
 ```
 
 ### Built With
@@ -29,33 +31,22 @@ go get github.com/iods/go-util/data/maputil
 Function API
 ------------
 
+### Flip()
 
-| Name | Version |
-|------|---------|
-| null | ~> 2.1 |
+In any action you can flip the result or value of a boolean.
 
-### Create butterflies
-
-In any action you can log out a butterfly using the context.
-
-```javascript
-function someAction({butterfly}) {
-  butterfly()
-}
+```
+func Flip(b bool) bool {}
 ```
 
-| Name | Description |
-|------|-------------|
-| output\_name | description for output\_name |
+### ToInt()
 
+In any action you can return a true/false argument as an int (1 or 0).
 
-Testing
--------
-
-Tests are available by running the below command:
-```shell
-go test
 ```
+func ToInt(b bool) int {}
+```
+
 
 Acknowledgements
 ----------------
