@@ -14,6 +14,7 @@ func Capitalize(s string) string {
 	if len(s) == 1 {
 		return strings.ToUpper(s)
 	}
+	return s
 }
 
 // Title is the alias to strings.ToTitle() and returns?
