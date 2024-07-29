@@ -1,7 +1,7 @@
-Package `assert` v0.1.0
+Package `mathutil` v0.1.0
 =======================
 
-Package assert adds and extends default tool functions available for testing in Go.
+Package mathutil adds and extends default tool functions available for mathematical operations in Go.
 
 > **WARNING:** This is a private package and is not currently maintained for public use.
 
@@ -18,36 +18,12 @@ Getting Started
 ### Installation
 
 ```shell
-go get github.com/iods/go-util/assert
+go get github.com/iods/go-util/mathutil
 ```
 ### Built With
 * [fatih/color](https://github.com/fatih/color)
 
 ### Rationale
-
-
-Function API
-------------
-
-
-| Name | Version |
-|------|---------|
-| null | ~> 2.1 |
-
-### Create butterflies
-
-In any action you can log out a butterfly using the context.
-
-```javascript
-function someAction({butterfly}) {
-  butterfly()
-}
-```
-
-| Name | Description |
-|------|-------------|
-| output\_name | description for output\_name |
-
 
 Testing
 -------

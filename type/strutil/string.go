@@ -1,6 +1,7 @@
 package strutil
 
 import (
+	"bytes"
 	"strings"
 )
 
@@ -42,4 +43,17 @@ func Match(a, b []string) bool {
 		}
 	}
 	return true
+}
+
+// Escape returns a string w/ backslashes added on chars that need to be escaped (',",\)
+func Escape(s string) string {
+	var buf bytes.Buffer
+	for _, char := range s {
+		switch char {
+		case '\'', '"', '\\':
+			buf.WriteRune('\\')
+		}
+		buf.WriteRune(char)
+	}
+	return buf.String()
 }
